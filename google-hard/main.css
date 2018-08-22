@@ -259,7 +259,7 @@ footer {
 }
 
 /* Media Queries */
-@media (max-width: 940px) {
+@media (max-width: 1020px) {
 
     #google-apps {
         display: none;
@@ -268,7 +268,11 @@ footer {
 
 @media (max-width: 801px) {
     .list-items {
-        height: 200px;
+        height: 250px;
+    }
+
+    .logo {
+        padding: 20px 0 10px 0;
     }
 
     nav img {
@@ -284,6 +288,11 @@ footer {
         padding: 20px;
     }
 
+    #search-section {
+        width: 80%;
+        margin: 0px auto 25px auto;
+    }
+
     .left {
         float: none;
     }
@@ -293,4 +302,16 @@ footer {
         display: block;
         margin: 0 auto;
     }
+
+    #links-section li:first-child a {
+        border: none !important;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #links-section li {
+        padding: 5px;
+    }
+    
 }
