@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock, Paper, Scissors Game</title>
+</head>
+
+<body>
+    <script>
+
+        // Execute the game
+        game();
+        
+        // Game function
+        function game() {
+            let user;
+            let computer;
+
+            playRound(user, computer);
+        }
+
+        // Logic of the game
+        function playRound(userChoice, computerChoice) {
+
+            // Points and Round Accumulator
+            let usrPoints = 0;
+            let cpuPoints = 0;
+            let round;
+
+            // Messages
+            let winMessage;
+            let loseMessage;
+            let drawMessage;
+            let finalMessage;
+
+            // Looping the Rounds
+            for (let i = 1; i < 6; i++) {
+
+                // Get computer input
+                computerChoice = computerPlay().toLowerCase();
+
+                // console.log(computerChoice);
+
+                // Messages
+                winMessage = `You win! computer choise was ${computerChoice.toLocaleUpperCase()}`;
+                loseMessage = `You lose! computer choise was ${computerChoice.toLocaleUpperCase()}`;
+                drawMessage = `Draw! computer choise was ${computerChoice.toLocaleUpperCase()}`;
+
+                //Round
+                round = i;
+
+                // Get user input
+                userChoice = '';
+                userChoice = prompt('ROUND:' + round + '\nChoose your weapon!!\nRock, Paper or Scissor?').toLowerCase();
+
+                // Check if the option are equal or not                
+                if (userChoice === computerChoice) {
+                    alert(`ROUND: ${round}\n${drawMessage}`);
+                } else if (userChoice === 'rock' && computerChoice === "scissor") {
+                    usrPoints += 1;
+                    alert(`${winMessage}\nYou have now ${usrPoints}pt`);
+                } else if (userChoice === 'rock' && computerChoice === "paper") {
+                    cpuPoints += 1;
+                    alert(`${loseMessage}\nYou still have ${usrPoints}pt`);
+                } else if (userChoice === 'scissor' && computerChoice === 'paper') {
+                    usrPoints += 1;
+                    alert(`${winMessage}\nYou have now ${usrPoints}pt`);
+                } else if (userChoice === 'scissor' && computerChoice === 'rock') {
+                    cpuPoints += 1;
+                    alert(`${loseMessage}\nYou still have ${usrPoints}pt`);
+                } else if (userChoice === 'paper' && computerChoice === 'rock') {
+                    usrPoints += 1;
+                    alert(`${winMessage}\nYou have now ${usrPoints}pt`);
+                } else {
+                    cpuPoints += 1;
+                    alert(`${loseMessage}\nYou still have ${usrPoints}pt`);
+                }
+            }
+
+            // Verify the final points
+            if (usrPoints > cpuPoints) {
+                finalMessage = alert(`You Win the match!! \nUser: ${usrPoints}pt vs Computer: ${cpuPoints} pt`);
+            } else if (usrPoints < cpuPoints) {
+                finalMessage = alert(`You Lose the match... \nUser: ${usrPoints}pt vs Computer: ${cpuPoints}pt`);
+            } else {
+                finalMessage = alert(`You have a tied! \nUser: ${usrPoints}pt vs Computer: ${cpuPoints}pt`);
+            }
+
+            // Returns final message
+            return finalMessage;
+        }
+
+        // Get computer ramdon input
+        function computerPlay() {
+            let number = Math.floor(Math.random() * 3);
+            let choise;
+
+            if (number === 1) {
+                choise = 'paper';
+            } else if (number === 2) {
+                choise = 'scissor';
+            } else {
+                choise = 'rock';
+            }
+            return choise;
+        }
+
+    </script>
+</body>
+
+</html>
