@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+* , html, body, p {
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.author {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #223850;
+}
+
+.author a {
+    font-weight: bold;
+    color: #223850;
+}
+
+#bg-body {
+    transition: all 0.8s ease-in;
+}
+
+/* Grid */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* height: 100vh; */
+}
+
+.calc-container {
+    display: grid;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.dot {
+    grid-column: span 2;
+}
+
+.equal {
+    grid-row: span 2;
+}
+
+#buttons-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    text-align: center;
+    
+}
+
+/* Input */
+#input {
+    width: 100%;
+    padding-right: 10px;
+    font-size: 3em;
+    text-align: right;
+    height: 2em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #FDFEFE;
+    background-color: #223850;
+    transition: all 0.3s ease-in
+}
+
+/* Btn's */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    
+}
+
+.btn-num {
+    background-color: #223850;
+    color: #6885A7;
+}
+
+.btn-num:hover {
+    background-color: #233B55;
+}
+
+.btn-operator {
+    font-weight: bold;
+    background-color: #233B55;
+    color: #FDFEFE;
+}
+
+.btn-operator:hover {
+    background-color: rgb(27, 47, 68) !important
+}
+
+#color-change {
+    position: fixed;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    font-size: 1em;
+    margin: 1em;
+    transition: all 0.3s ease-in;
+    background-color: #223850;
+    color: #FDFEFE;
+}
+
+#color-change:hover {
+    background-color: #FDFEFE !important;
+    color: #233B55 !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* Color Modes */
+.white-bg {
+    background-color: #FDFEFE !important;
+}
+.white-text {
+    color: #FDFEFE !important;
+}
+.blue-bg {
+    background-color: #223850 !important;
+}
+.blue-text {
+    color: #223850 !important;
+}
+
+/* Queries */
+@media screen and (max-width: 601px) {
+    #color-change {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        margin: 0 auto 1em auto;
+    }
+}
